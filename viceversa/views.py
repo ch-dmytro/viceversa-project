@@ -8,4 +8,5 @@ def home(request):
 def reverse(request):
 	message_text = request.GET['message']
 	reversed_text = message_text[::-1]
-	return render(request, 'reverse.html', {'message':message_text, 'reversedtext':reversed_text})
+	words_amount = str(len(message_text.split()))
+	return render(request, 'reverse.html', {'message':message_text, 'reversedtext':reversed_text, 'amount':words_amount})
